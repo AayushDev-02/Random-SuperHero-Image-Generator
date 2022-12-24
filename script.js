@@ -8,12 +8,21 @@ const RandomHero = document.querySelector("#RandomHero");
 const IDHero = document.querySelector('#IDHero');
 const inputID = document.querySelector('#inputID');
 const reset = document.querySelector('#reset');
+const heroName = document.querySelector("#name");
+const heroPower = document.querySelector("#powerLevel");
 
 const getSuperHero =(ID) => {
     fetch(BASE_URL+ID + '.json' )
     .then(response => response.json())
     .then(json => {
+        heroName.innerText= json.name;
         img.src = json.images.md;
+        heroPower.innerText= `intelligence: ${json.powerstats.intelligence}, 
+                                strength: ${json.powerstats.strength}, 
+                                speed: ${json.powerstats.speed}, 
+                                durability: ${json.powerstats.durability}, 
+                                power: ${json.powerstats.power}, 
+                                combat: ${json.powerstats.combat}`
     })
 }   
 
@@ -41,6 +50,8 @@ reset.onclick = () =>{
     inputID.classList.add('visi');
     reset.classList.add('visi');
     img.src='';
+    heroName.innerText=''
+    heroPower.innerText=''
 
 }
 

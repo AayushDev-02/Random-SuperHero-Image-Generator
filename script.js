@@ -17,12 +17,12 @@ const getSuperHero =(ID) => {
     .then(json => {
         heroName.innerText= json.name;
         img.src = json.images.md;
-        heroPower.innerText= `intelligence: ${json.powerstats.intelligence}, 
-                                strength: ${json.powerstats.strength}, 
-                                speed: ${json.powerstats.speed}, 
-                                durability: ${json.powerstats.durability}, 
-                                power: ${json.powerstats.power}, 
-                                combat: ${json.powerstats.combat}`
+        heroPower.innerText= `Intelligence: ${json.powerstats.intelligence}, 
+                                Strength: ${json.powerstats.strength}, 
+                                Speed: ${json.powerstats.speed}, 
+                                Durability: ${json.powerstats.durability}, 
+                                Power: ${json.powerstats.power}, 
+                                Combat: ${json.powerstats.combat}`
     })
 }   
 

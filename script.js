@@ -40,6 +40,7 @@ const temp = () =>{
 IDHero.onclick = () =>{
     inputID.classList.remove('visi');
     reset.classList.remove('visi');
+    IDHero.innerText = "Search";
 
     if(inputID.value != ''){
         temp();
@@ -52,6 +53,7 @@ reset.onclick = () =>{
     img.src='';
     heroName.innerText=''
     heroPower.innerText=''
+    IDHero.innerText='Get Hero By ID'
 
 }
 
